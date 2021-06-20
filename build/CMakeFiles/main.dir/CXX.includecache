@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.h
+cstdint
+-
+
+/Users/evandro/Documents/dev/nes/src/main.cpp
+iostream
+-
+./Components/Processor/Processor.h
+/Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.h
+

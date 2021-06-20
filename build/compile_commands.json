@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/evandro/Documents/dev/nes/build",
+  "command": "/usr/bin/clang++   -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -fPIE -std=gnu++11 -o CMakeFiles/Nes.dir/src/Components/Bus/Bus.cpp.o -c /Users/evandro/Documents/dev/nes/src/Components/Bus/Bus.cpp",
+  "file": "/Users/evandro/Documents/dev/nes/src/Components/Bus/Bus.cpp"
+},
+{
+  "directory": "/Users/evandro/Documents/dev/nes/build",
+  "command": "/usr/bin/clang++   -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -fPIE -std=gnu++11 -o CMakeFiles/Nes.dir/src/Components/Processor/Processor.cpp.o -c /Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.cpp",
+  "file": "/Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.cpp"
+},
+{
+  "directory": "/Users/evandro/Documents/dev/nes/build",
+  "command": "/usr/bin/clang++   -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -fPIE -std=gnu++11 -o CMakeFiles/Nes.dir/src/main.cpp.o -c /Users/evandro/Documents/dev/nes/src/main.cpp",
+  "file": "/Users/evandro/Documents/dev/nes/src/main.cpp"
+}
+]

@@ -1,6 +1,6 @@
-#include "Processor.hpp"
+#include "Processor.h"
 
-Processor::Processor(/* args */)
+Processor::Processor()
 {
 }
 
