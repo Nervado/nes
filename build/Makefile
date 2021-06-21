@@ -75,6 +75,40 @@ CMAKE_BINARY_DIR = /Users/evandro/Documents/dev/nes/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/Cellar/cmake/3.19.6/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/local/Cellar/cmake/3.19.6/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.19.6/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/local/Cellar/cmake/3.19.6/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,6 +130,29 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.19.6/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/local/Cellar/cmake/3.19.6/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/local/Cellar/cmake/3.19.6/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -130,6 +187,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named lNes
+
+# Build rule for target.
+lNes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lNes
+.PHONY : lNes
+
+# fast build rule for target.
+lNes/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/build
+.PHONY : lNes/fast
+
+#=============================================================================
 # Target rules for targets named Nes
 
 # Build rule for target.
@@ -142,12 +212,78 @@ Nes/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/build
 .PHONY : Nes/fast
 
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f GoogleTest/googlemock/CMakeFiles/gmock.dir/build.make GoogleTest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f GoogleTest/googlemock/CMakeFiles/gmock_main.dir/build.make GoogleTest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f GoogleTest/googletest/CMakeFiles/gtest_main.dir/build.make GoogleTest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f GoogleTest/googletest/CMakeFiles/gtest.dir/build.make GoogleTest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named NesTests
+
+# Build rule for target.
+NesTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NesTests
+.PHONY : NesTests
+
+# fast build rule for target.
+NesTests/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/NesTests.dir/build.make test/CMakeFiles/NesTests.dir/build
+.PHONY : NesTests/fast
+
 src/Components/Bus/Bus.o: src/Components/Bus/Bus.cpp.o
 
 .PHONY : src/Components/Bus/Bus.o
 
 # target to build an object file
 src/Components/Bus/Bus.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/Components/Bus/Bus.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/Components/Bus/Bus.cpp.o
 .PHONY : src/Components/Bus/Bus.cpp.o
 
@@ -157,6 +293,7 @@ src/Components/Bus/Bus.i: src/Components/Bus/Bus.cpp.i
 
 # target to preprocess a source file
 src/Components/Bus/Bus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/Components/Bus/Bus.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/Components/Bus/Bus.cpp.i
 .PHONY : src/Components/Bus/Bus.cpp.i
 
@@ -166,6 +303,7 @@ src/Components/Bus/Bus.s: src/Components/Bus/Bus.cpp.s
 
 # target to generate assembly for a file
 src/Components/Bus/Bus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/Components/Bus/Bus.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/Components/Bus/Bus.cpp.s
 .PHONY : src/Components/Bus/Bus.cpp.s
 
@@ -175,6 +313,7 @@ src/Components/Processor/Processor.o: src/Components/Processor/Processor.cpp.o
 
 # target to build an object file
 src/Components/Processor/Processor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/Components/Processor/Processor.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/Components/Processor/Processor.cpp.o
 .PHONY : src/Components/Processor/Processor.cpp.o
 
@@ -184,6 +323,7 @@ src/Components/Processor/Processor.i: src/Components/Processor/Processor.cpp.i
 
 # target to preprocess a source file
 src/Components/Processor/Processor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/Components/Processor/Processor.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/Components/Processor/Processor.cpp.i
 .PHONY : src/Components/Processor/Processor.cpp.i
 
@@ -193,6 +333,7 @@ src/Components/Processor/Processor.s: src/Components/Processor/Processor.cpp.s
 
 # target to generate assembly for a file
 src/Components/Processor/Processor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/Components/Processor/Processor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/Components/Processor/Processor.cpp.s
 .PHONY : src/Components/Processor/Processor.cpp.s
 
@@ -202,6 +343,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/main.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
@@ -211,6 +353,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
@@ -220,6 +363,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lNes.dir/build.make CMakeFiles/lNes.dir/src/main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Nes.dir/build.make CMakeFiles/Nes.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
@@ -230,8 +374,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... Nes"
+	@echo "... NesTests"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... lNes"
 	@echo "... src/Components/Bus/Bus.o"
 	@echo "... src/Components/Bus/Bus.i"
 	@echo "... src/Components/Bus/Bus.s"

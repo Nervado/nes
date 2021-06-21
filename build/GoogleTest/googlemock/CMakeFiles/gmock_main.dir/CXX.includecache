@@ -526,13 +526,13 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/Users/evandro/documents/Dev/nes/GoogleTest/googlemock/src/gmock_main.cc
+/Users/evandro/Documents/dev/nes/GoogleTest/googlemock/src/gmock_main.cc
 iostream
 -
 gmock/gmock.h
-/Users/evandro/documents/Dev/nes/GoogleTest/googlemock/src/gmock/gmock.h
+/Users/evandro/Documents/dev/nes/GoogleTest/googlemock/src/gmock/gmock.h
 gtest/gtest.h
-/Users/evandro/documents/Dev/nes/GoogleTest/googlemock/src/gtest/gtest.h
+/Users/evandro/Documents/dev/nes/GoogleTest/googlemock/src/gtest/gtest.h
 tchar.h
 -
 

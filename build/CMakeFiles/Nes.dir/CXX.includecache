@@ -6,20 +6,12 @@
 
 #IncludeRegexTransform: 
 
-/Users/evandro/Documents/dev/nes/src/Components/Bus/Bus.cpp
-Bus.h
-/Users/evandro/Documents/dev/nes/src/Components/Bus/Bus.h
-
 /Users/evandro/Documents/dev/nes/src/Components/Bus/Bus.h
 cstdint
 -
 array
 -
 ../Processor/Processor.h
-/Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.h
-
-/Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.cpp
-Processor.h
 /Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.h
 
 /Users/evandro/Documents/dev/nes/src/Components/Processor/Processor.h
