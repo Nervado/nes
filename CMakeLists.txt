@@ -10,17 +10,20 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 file(GLOB_RECURSE fileCollection "src/*.cpp")
 
-#enable_testing()
+enable_testing()
 
-#add_subdirectory(GoogleTest)
+add_subdirectory(GoogleTest)
 
-#include_directories(src)
+# set(Headers src/Components/Bus/Bus.h src/Components/Processor/Processor.h)
 
-#set(Headers src/Components/Bus/Bus.h src/Components/Processor/Processor.h)
+# set(Sources src/Components/Bus/Bus.cpp src/Components/Processor/Processor.cpp)
 
-#set(Sources src/Components/Bus/Bus.cpp src/Components/Processor/Processor.cpp)
+# add_library(l${This} STATIC ${Sources} ${Headers}) 
 
-#add_library(${This} STATIC ${Sources} ${Headers}) 
+add_library(l${This} STATIC ${fileCollection}) 
+
+#add_executable(${This} ${Sources})
 
 add_executable(Nes ${fileCollection})
-# add_subdirectory(test)
+
+add_subdirectory(test)

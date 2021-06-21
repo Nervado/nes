@@ -9,6 +9,7 @@ TEST(ExampleTests__Processor_Bus, Bus)
 //EXPECT_EQ(IntPart::part(4), "Range: 3 Average: 2.50 Median: 2.50");
 //EXPECT_EQ(IntPart::part(5), "Range: 5 Average: 3.50 Median: 3.50");
   EXPECT_EQ(1, 1);
+  EXPECT_FALSE(true);
 }
 /**
 TEST(ExampleTests__Intpar__Enumerate, IntPart)
@@ -31,7 +32,3 @@ TEST(ExampleTests__Intpar__Enumerate_6, IntPart)
 
 **/
 
-int main()
-{
-  return 0;
-}
