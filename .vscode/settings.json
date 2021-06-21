@@ -5,6 +5,7 @@
     "source.organizeImports": false
   },
   "editor.formatOnSave": false,
+  "editor.formatOnType": true,
   "files.associations": {
     "*.stl ": "st",
     "*.java": "java",
