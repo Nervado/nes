@@ -6,20 +6,8 @@ using namespace std;
 
 int main()
 {
-  
-  Bus bus;
-  Processor p;
-  printf("Hello Nes\n");
-
-  int i = 0;
-
-  cout << "1 << " << i << " = " << (1 << i) << endl;
-
-  i = 1;
-
-  cout << "1 << " << i << " = " << (1 << i) << endl;
-
-  i = 2;
-
-  cout << "1 << " << i << " = " << (1 << i) << endl;
+  //Demo demo;
+  //demo.construct(680, 480, 2, 2);
+  //demo.Start();
+  return 0;
 }
