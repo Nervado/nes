@@ -10,4 +10,16 @@ int main()
   Bus bus;
   Processor p;
   printf("Hello Nes\n");
+
+  int i = 0;
+
+  cout << "1 << " << i << " = " << (1 << i) << endl;
+
+  i = 1;
+
+  cout << "1 << " << i << " = " << (1 << i) << endl;
+
+  i = 2;
+
+  cout << "1 << " << i << " = " << (1 << i) << endl;
 }

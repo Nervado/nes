@@ -1,6 +1,7 @@
 #pragma once
-#include <cstdint>
 #include <array>
+#include <cstdint>
+
 #include "../Processor/Processor.h"
 
 class Bus
